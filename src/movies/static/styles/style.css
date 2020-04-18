@@ -1,0 +1,82 @@
+* {
+  font-size: 40px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+body{
+  background-color: rgb(150,150,150);
+}
+
+.searchbar{
+  border: solid 3px tomato;
+  background-color: white;
+  margin: 45vh 35vw;
+}
+
+.searchbar input{
+  text-decoration: none;
+  text-opacity: 0.9;
+}
+
+
+
+/* Background animation section */
+/* https://frontendscript.com/css-background-image-slideshow-fade/ */
+.crossfade > figure {
+  animation: imageAnimation 60s linear infinite 0s;
+  background-size: cover;
+  background-position: center;
+
+  height: 100vh;
+  width: 100vw;
+  /* to keep it in the top left corner*/
+  position: absolute;
+  left: 0;
+  top: 0;
+  /* **** */
+  opacity: 0;
+  z-index: -1;
+}
+
+.crossfade > figure:nth-child(1) {
+  background-image: url('/static/images/img_01.jpg');
+}
+.crossfade > figure:nth-child(2) {
+  animation-delay: 12s;
+  background-image: url('/static/images/img_02.jpg');
+}
+.crossfade > figure:nth-child(3) {
+  animation-delay: 24s;
+  background-image: url('/static/images/img_03.jpg');
+}
+.crossfade > figure:nth-child(4) {
+  animation-delay: 36s;
+  background-image: url('/static/images/img_04.jpg');
+}
+.crossfade > figure:nth-child(5) {
+  animation-delay: 48s;
+  background-image: url('/static/images/img_05.jpg');
+}
+
+@keyframes imageAnimation {
+  0% {
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  3% {
+    animation-timing-function: ease-out;
+    opacity: 1;
+  }
+  25% {
+    opacity: 1
+  }
+  80% {
+    opacity: 0
+  }
+  100% {
+    opacity: 0
+  }
+}
+/* Background animation section END */

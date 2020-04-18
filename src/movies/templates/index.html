@@ -1,0 +1,23 @@
+{% extends "head.html" %}
+
+
+
+{% block content %}
+  <div class="crossfade">
+    <figure></figure>
+    <figure></figure>
+    <figure></figure>
+    <figure></figure>
+    <figure></figure>
+  </div>
+
+
+  <div id="root">
+    <div class=searchbar>
+      <form class="" method="post">
+        {% csrf_token %}
+        <input type="text" name="movieTitle" value="Enter movie title">
+      </form>
+    </div>
+  </div>
+{% endblock %}
