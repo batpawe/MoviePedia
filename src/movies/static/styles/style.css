@@ -20,6 +20,10 @@ body{
   text-opacity: 0.9;
 }
 
+img{
+  width: 500px;
+  height: 500px;
+}
 
 
 /* Background animation section */

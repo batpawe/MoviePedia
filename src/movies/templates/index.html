@@ -14,10 +14,16 @@
 
   <div id="root">
     <div class=searchbar>
-      <form class="" method="post">
+      <h2></h2>
+      <form id="search">
         {% csrf_token %}
-        <input type="text" name="movieTitle" value="Enter movie title">
+        <input type="text" name="movieTitle" id="movieTitle" value="Enter movie title" required minlength="3">
+        <input type="submit" id="submit" value="submit">
       </form>
     </div>
   </div>
+{% endblock %}
+
+{% block javascript %}
+<script type="text/javascript" src="static/javascript/buttons.js"></script>
 {% endblock %}
