@@ -1,23 +1,16 @@
 {% extends "head.html" %}
 
-
+{% block css %}
+<link rel="stylesheet" type="text/css" href="static/styles/main.css">
+{% endblock %}
 
 {% block content %}
-  <div class="crossfade">
-    <figure></figure>
-    <figure></figure>
-    <figure></figure>
-    <figure></figure>
-    <figure></figure>
-  </div>
-
-
   <div id="root">
     <div class=searchbar>
       <h2></h2>
       <form id="search">
         {% csrf_token %}
-        <input type="text" name="movieTitle" id="movieTitle" value="Enter movie title" required minlength="3">
+        <input type="text" name="movieTitle" id="movieTitle" value="Matrix" required minlength="3">
         <input type="submit" id="submit" value="submit">
       </form>
     </div>

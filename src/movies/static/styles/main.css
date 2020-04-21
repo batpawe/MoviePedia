@@ -1,0 +1,10 @@
+.searchbar{
+  border: solid 3px tomato;
+  background-color: white;
+  margin: 35vh 30vw;
+}
+
+.searchbar input{
+  text-decoration: none;
+  text-opacity: 0.9;
+}

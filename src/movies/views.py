@@ -29,12 +29,14 @@ def index(request):
 def result(request, movieTitle):
     ia = IMDb('http')
     movieQuery = ia.search_movie(movieTitle)[0]
-    print(movieQuery)
+    imageurl = movieQuery['cover url']
+    imageurl = imageurl.split('@', 1)[0]
+    imageurl = imageurl + '@.jpg'
+
+
     context = {
         'title': movieQuery.get('title'),
-        # Przerobić linki z gorszej rozdzielczości na lepszą.
-        # https://m.media-amazon.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SY1000_CR0,0,665,1000_AL_.jpg
-        # https://m.media-amazon.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SY1000_CR0,0,32,44_AL_.jpg
-        'cover': movieQuery['cover url']
+        'cover': imageurl
+
     }
     return render(request, 'result.html', context=context)

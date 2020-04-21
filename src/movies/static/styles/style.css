@@ -1,5 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 * {
-  font-size: 40px;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   text-align: center;
@@ -9,21 +10,61 @@ body{
   background-color: rgb(150,150,150);
 }
 
-.searchbar{
-  border: solid 3px tomato;
-  background-color: white;
-  margin: 45vh 35vw;
+header{
+  background-color: rgba(130, 130, 130, 0.8);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px ;
 }
 
-.searchbar input{
+li,a, button{
+  color: #edf0f1;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 1.6rem;
   text-decoration: none;
-  text-opacity: 0.9;
+  flex: 0.8;
 }
 
-img{
-  width: 500px;
-  height: 500px;
+.nav_l{
+  flex: 3;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
 }
+
+.nav_l li{
+  display: inline-block;
+}
+
+.nav_l li a{
+  transition: all 0.3s ease 0s;
+}
+
+.nav_l li a:hover{
+  color: lightgrey;
+}
+
+.nav_l_ico{
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+.nav_l_ico li{
+  display: inline-block;
+  padding: 0 10%;
+}
+
+.nav_l_ico li a{
+  transition: all 0.5s ease;
+}
+
+.nav_l_ico li a:hover{
+  color: black;
+}
+
 
 
 /* Background animation section */
