@@ -5,16 +5,32 @@
 {% endblock %}
 
 {% block content %}
-  <div id="root">
-    <div class=searchbar>
-      <h2></h2>
-      <form id="search">
-        {% csrf_token %}
-        <input type="text" name="movieTitle" id="movieTitle" value="Matrix" required minlength="3">
-        <input type="submit" id="submit" value="submit">
-      </form>
-    </div>
+<div>
+    <form class="searchbar">
+      {% csrf_token %}
+      <input type="search" name="movieTitle" id="movieTitle" placeholder="Movie title" required minlength="3">
+      <input type="submit" id="submit" value="submit" class="submit">
+    </form>
+</div>
+
+<div class="gallery">
+  <h2>TOP MOVIES</h2>
+    <section class="gallerySlideShow">
+        <a href="#"><i class="fa fa-arrow-left fa-3x" aria-hidden="true"></i></a>
+        {% for file in context.items %}
+        <img class="galleryImage" src="{{file.1.cover}}" alt="{{file.1.title}}">
+        {% endfor %}
+        <a href="#"><i class="fa fa-arrow-right fa-3x" aria-hidden="true"></i></a>
+    </section>
   </div>
+  <!--<ul class="movies">
+    <li>MovieTitle1</li>
+    <li>MovieTitle2</li>
+    <li>MovieTitle3</li>
+    <li>MovieTitle4</li>
+    <li>MovieTitle5</li>
+  </ul>-->
+</div>
 {% endblock %}
 
 {% block javascript %}

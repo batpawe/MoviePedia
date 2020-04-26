@@ -1,10 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
-from imdb import IMDb
 import json
-
-# dziwny bug z rozłączającym się socketem
-# nie wpływa na działanie strony.
+from movies.modules.loadMoviesOnStart import *
 
 def index(request):
     ia = IMDb('http')
@@ -17,26 +14,23 @@ def index(request):
             while len(movieQuery) >= 3 and i <= 3:
                 response[i] = {
                     'title' : movieQuery[i].get('title'),
-                    'cover' : movieQuery[i].get('cover')
+                    'cover' : modUrl(movieQuery[i].get('cover'))
                 }
                 i+=1
             return HttpResponse(json.dumps(response))
         else:
             return HttpResponse(404)
     else:
-        return render(request, 'index.html')
+        context = getTop()
+        return render(request, 'index.html', {'context': context})
 
 def result(request, movieTitle):
     ia = IMDb('http')
     movieQuery = ia.search_movie(movieTitle)[0]
-    imageurl = movieQuery['cover url']
-    imageurl = imageurl.split('@', 1)[0]
-    imageurl = imageurl + '@.jpg'
-
 
     context = {
         'title': movieQuery.get('title'),
-        'cover': imageurl
+        'cover': modUrl(movieQuery['cover url'])
 
     }
     return render(request, 'result.html', context=context)

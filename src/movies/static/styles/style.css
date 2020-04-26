@@ -6,6 +6,11 @@
   text-align: center;
 }
 
+html{
+  max-height: 100vh;
+  max-width: 100vw;
+}
+
 body{
   background-color: rgb(150,150,150);
 }
@@ -15,7 +20,10 @@ header{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px ;
+  padding: 1em;
+  min-width: 100%;
+  padding: 0 2em;
+  overflow: hidden;
 }
 
 li,a, button{
@@ -24,17 +32,18 @@ li,a, button{
   font-weight: 500;
   font-size: 1.6rem;
   text-decoration: none;
-  flex: 0.8;
 }
 
 .nav_l{
-  flex: 3;
+  flex: 2;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   list-style: none;
 }
 
 .nav_l li{
+  padding: 0 2em;
+  font-size: 1.8rem;
   display: inline-block;
 }
 
@@ -43,15 +52,24 @@ li,a, button{
 }
 
 .nav_l li a:hover{
-  color: lightgrey;
+  color: rgb(32,32,32);
+}
+a{
+  transition: all 0.5s ease-out;
+}
+
+a:hover{
+  color: rgb(32,32,32);
 }
 
 .nav_l_ico{
-  flex: 1;
+  flex: 0.65;
   display: flex;
   justify-content: space-between;
   list-style: none;
+  max-width: 22em;
 }
+
 .nav_l_ico li{
   display: inline-block;
   padding: 0 10%;
@@ -62,7 +80,7 @@ li,a, button{
 }
 
 .nav_l_ico li a:hover{
-  color: black;
+  color: rgb(32,32,32);
 }
 
 
@@ -73,7 +91,6 @@ li,a, button{
   animation: imageAnimation 60s linear infinite 0s;
   background-size: cover;
   background-position: center;
-
   height: 100vh;
   width: 100vw;
   /* to keep it in the top left corner*/

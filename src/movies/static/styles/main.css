@@ -1,10 +1,68 @@
 .searchbar{
-  border: solid 3px tomato;
-  background-color: white;
-  margin: 35vh 30vw;
+  margin: 20vh 30vw;
 }
 
-.searchbar input{
-  text-decoration: none;
-  text-opacity: 0.9;
+
+/* Searcbar inspired by https://freefrontend.com/css-search-boxes/ bar nr 2 */
+form input[type=search] {
+  border: none;
+  background-color: rgba(200, 200, 200, 0.8);
+  font-size: 2em;
+  height: 2em;
+  outline: solid rgba(32, 32, 32, 0.2) 0;
+  padding: .5em;
+  transition: all 2s ease-in;
+  width: 30vw;
+}
+
+form input[type=search]:focus {
+  outline: solid rgba(32, 32, 32, 0.2) 100vw;
+  background-color: white;
+}
+/* Searcbar inspired by https://freefrontend.com/css-search-boxes/ bar nr 2 */
+
+.submit{
+  display: none;
+}
+
+
+.gallery{
+  background-color: rgba(200, 200, 200, 0.8);
+}
+
+.gallerySlideShow{
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 4em;
+}
+
+.galleryImage{
+  flex: 2;
+  padding: 0 2em;
+  max-width: 22em;
+  max-height: 22em;
+}
+
+.gallerySlideShow a, i{
+  margin: auto 0 auto 0;
+  padding: auto 0.1em auto 0.1em;
+}
+
+h2{
+  color: white;
+  font-size: 4rem;
+}
+
+@media only screen and (max-width: 1200px) {
+  .galleryImage {
+    max-width: 15em;
+    max-height: 15em;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .galleryImage {
+    max-width: 40em;
+    max-height: 40em;
+  }
 }
