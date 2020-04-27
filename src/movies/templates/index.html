@@ -3,34 +3,28 @@
 {% block css %}
 <link rel="stylesheet" type="text/css" href="static/styles/main.css">
 {% endblock %}
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 {% block content %}
 <div>
     <form class="searchbar">
       {% csrf_token %}
-      <input type="search" name="movieTitle" id="movieTitle" placeholder="Movie title" required minlength="3">
+      <input type="search" autocomplete="off" name="movieTitle" id="movieTitle" placeholder="Movie title" required minlength="3">
       <input type="submit" id="submit" value="submit" class="submit">
+      <div class="dropdown">
+        </div>
     </form>
 </div>
 
 <div class="gallery">
-  <h2>TOP MOVIES</h2>
+  <h2>TOP 5 MOVIES</h2>
     <section class="gallerySlideShow">
-        <a href="#"><i class="fa fa-arrow-left fa-3x" aria-hidden="true"></i></a>
         {% for file in context.items %}
-        <img class="galleryImage" src="{{file.1.cover}}" alt="{{file.1.title}}">
+        <a href="/{{file.1.title}}"><img class="galleryImage" src="{{file.1.cover}}" alt="{{file.1.title}}"></a>
         {% endfor %}
-        <a href="#"><i class="fa fa-arrow-right fa-3x" aria-hidden="true"></i></a>
     </section>
   </div>
-  <!--<ul class="movies">
-    <li>MovieTitle1</li>
-    <li>MovieTitle2</li>
-    <li>MovieTitle3</li>
-    <li>MovieTitle4</li>
-    <li>MovieTitle5</li>
-  </ul>-->
-</div>
 {% endblock %}
 
 {% block javascript %}

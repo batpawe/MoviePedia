@@ -2,6 +2,30 @@
   margin: 20vh 30vw;
 }
 
+.dropdown{
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  transition: all 2s ease-in;
+  width: 30vw;
+}
+
+.dropdown p{
+  padding: 2px;
+  transition: all 0.1s ease-in;
+  background-color: rgba(220, 220, 220, 0.8);
+  color: rgb(50, 50, 50);
+  font-size: 1.2rem;
+}
+
+.dropdown p:hover{
+  background-color: rgba(220, 220, 220, 0.9);
+  color: black;
+  font-size: 1.3rem;
+}
+
 
 /* Searcbar inspired by https://freefrontend.com/css-search-boxes/ bar nr 2 */
 form input[type=search] {
@@ -27,42 +51,50 @@ form input[type=search]:focus {
 
 
 .gallery{
-  background-color: rgba(200, 200, 200, 0.8);
+  background-color: rgba(130, 130, 130, 0.6);
 }
 
 .gallerySlideShow{
   display: flex;
   justify-content: space-between;
-  padding-bottom: 4em;
+  margin: auto;
+  padding-bottom: 2em;
 }
 
 .galleryImage{
   flex: 2;
   padding: 0 2em;
-  max-width: 22em;
-  max-height: 22em;
+  max-width: 15em;
+  max-height: 15em;
 }
 
-.gallerySlideShow a, i{
-  margin: auto 0 auto 0;
-  padding: auto 0.1em auto 0.1em;
+.gallerySlideShow a:hover{
+  background-color: rgba(0, 0, 0, 0.1);
+  transform: scale(1.5);
+  transform-origin: auto;
 }
 
 h2{
   color: white;
-  font-size: 4rem;
+  font-size: 2rem;
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1600px) {
   .galleryImage {
-    max-width: 15em;
-    max-height: 15em;
+    max-width: 12em;
+    max-height: 12em;
+  }
+  h2{
+    font-size: 1rem;
   }
 }
 
-@media only screen and (min-width: 1920px) {
+@media only screen and (min-width: 2680px) {
   .galleryImage {
-    max-width: 40em;
-    max-height: 40em;
+    max-width: 25em;
+    max-height: 25em;
+  }
+  h2{
+    font-size: 3rem;
   }
 }

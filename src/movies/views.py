@@ -5,17 +5,17 @@ from movies.modules.loadMoviesOnStart import *
 
 def index(request):
     ia = IMDb('http')
-    response = {}
+    response = []
     if request.is_ajax():
         query = request.POST
         if int(query['requestType']) == 0:
             movieQuery = ia.search_movie(str(query['movieTitle']))
             i = 0
             while len(movieQuery) >= 3 and i <= 3:
-                response[i] = {
+                response.append({
                     'title' : movieQuery[i].get('title'),
                     'cover' : modUrl(movieQuery[i].get('cover'))
-                }
+                })
                 i+=1
             return HttpResponse(json.dumps(response))
         else:
