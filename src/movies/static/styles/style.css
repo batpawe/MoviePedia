@@ -73,11 +73,12 @@ a:hover{
 
 .nav_l_ico li{
   display: inline-block;
-  padding: 0 10%;
 }
 
 .nav_l_ico li a{
   transition: all 0.5s ease;
+  margin-right: 20%;
+  padding-right: 10%;
 }
 
 .nav_l_ico li a:hover{
@@ -143,3 +144,27 @@ a:hover{
   }
 }
 /* Background animation section END */
+
+@media only screen and (max-width: 1080px) {
+  .nav_l_ico a, button{
+    font-size: 1.3rem;
+  }
+  .nav_l a, button{
+    font-size: 1.3rem;
+  }
+  h1{
+    font-size: 1.3rem;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .nav_l_ico a, button{
+    font-size: 4rem;
+  }
+  .nav_l a, button{
+    font-size: 4rem;
+  }
+  h1{
+    font-size: 4rem;
+  }
+}

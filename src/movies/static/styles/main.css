@@ -79,10 +79,26 @@ h2{
   font-size: 2rem;
 }
 
-@media only screen and (max-width: 1600px) {
+@media only screen and (max-width: 1080px) {
   .galleryImage {
-    max-width: 12em;
-    max-height: 12em;
+    padding: 0 1em;
+    max-width: 7em;
+    max-height: 7em;
+  }
+  h2{
+    font-size: 1rem;
+  }
+  form input[type=search] {
+    height: 1em;
+    font-size: 1;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .galleryImage {
+    padding: 0 1em;
+    max-width: 14em;
+    max-height: 14em;
   }
   h2{
     font-size: 1rem;
